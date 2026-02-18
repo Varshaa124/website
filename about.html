@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | PSGR Krishnammal Alumni Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #7b2ff7, #f107a3);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .college-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto 2rem auto;
+  border-radius: 15px;
+}
+
+
+
+    .section-title {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: #fff;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .milestone {
+      padding: 1rem;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .milestone.left {
+      left: 0;
+    }
+
+    .milestone.right {
+      left: 50%;
+    }
+
+    .milestone::before {
+      content: ' ';
+      position: absolute;
+      top: 1rem;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .milestone.left::before {
+      right: -10px;
+    }
+
+    .milestone.right::before {
+      left: -10px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .testimonial {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      min-width: 250px;
+      flex-shrink: 0;
+    }
+
+    /* Counter */
+    .counters {
+      display: flex;
+      justify-content: space-around;
+      padding: 2rem 0;
+    }
+
+    .counter-box {
+      text-align: center;
+    }
+
+    .counter-number {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #000;
+      margin: 10% auto;
+      padding: 2rem;
+      width: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PSGR Krishnammal College for Women</h1>
+    <p class="subtitle">Alumni Portal - About</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contacts.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <img src="images/college.jpg" alt="College Building" class="college-img" />
+
+    <section class="timeline">
+      
+      <div class="milestone left">
+        <h4>1963</h4>
+        <p>College was established with a mission to empower women through education.</p>
+      </div>
+      <div class="milestone right">
+        <h4>1985</h4>
+        <p>Introduction of Postgraduate programs in Science and Commerce.</p>
+      </div>
+      <div class="milestone left">
+        <h4>2000</h4>
+        <p>Achieved autonomous status from UGC.</p>
+      </div>
+      <div class="milestone right">
+        <h4>2020</h4>
+        <p>Ranked among top 10 women's colleges in India.</p>
+      </div>
+    </section>
+
+    <section>
+      <h1>PSGR Krishnammal College for Women</h1><br>
+      <p>"Founded in 1963, PSGR Krishnammal College for Women is one of India’s leading institutions dedicated to the empowerment of women through quality higher education. Situated in Coimbatore, Tamil Nadu, the college has earned national acclaim for its commitment to academic excellence, innovation, and holistic student development. Affiliated to Bharathiar University and re-accredited by NAAC with an ‘A++’ grade, the institution offers a diverse range of undergraduate, postgraduate, and doctoral programs across arts, science, commerce, and technology. With a student-centric approach, the college blends traditional values with modern pedagogy, fostering a culture of research, creativity, and social responsibility. Over the decades, PSGR Krishnammal College has not only produced outstanding academic results but also inspired generations of confident, capable, and compassionate women leaders who contribute meaningfully to society. The vibrant campus, state-of-the-art facilities, dedicated faculty, and active alumni network make it a hub of learning and transformation for women from across the country."</p>
+     <br><br> <h2 class="section-title">Alumni Testimonials</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"This college shaped my career and gave me lifelong friends."</p>
+          <strong>- Priya S, 2005</strong>
+        </div>
+        <div class="testimonial">
+          <p>"An institution that truly empowers women."</p>
+          <strong>- Divya R, 2012</strong>
+        </div>
+        <div class="testimonial">
+          <p>"Unforgettable faculty and great learning experience."</p>
+          <strong>- Anjali T, 2018</strong>
+          <div id="latest-testimonial" class="testimonial-card" style="margin-bottom: 2rem;">
+            <!-- The latest testimonial will be loaded here dynamically -->
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Achievements</h2>
+      <div class="counters">
+        <div class="counter-box">
+          <div class="counter-number" data-target="12000">0</div>
+          <p>Alumni Worldwide</p>
+        </div>
+        <div class="counter-box">
+          <div class="counter-number" data-target="95">0</div>
+          <p>Placement Rate (%)</p>
+        </div>
+        <div class="counter-box">
+          <div class="counter-number" data-target="200">0</div>
+          <p>Faculty Members</p>
+        </div>
+      </div>
+      <button onclick="showModal()">View Detailed Achievements</button>
+    </section>
+
+    <div id="achievementsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="hideModal()">&times;</span>
+        <h3>College Achievements</h3>
+        <ul>
+          <li>NAAC A++ Accreditation</li>
+          <li>Ranked top 10 by NIRF</li>
+          <li>Over 300 university rank holders</li>
+          <li>Excellent placement record</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+ 
+  
+
+  <script>
+    // Animated counter
+    const counters = document.querySelectorAll(".counter-number");
+    counters.forEach(counter => {
+      const update = () => {
+        const target = +counter.getAttribute("data-target");
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / 200);
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(update, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      update();
+    });
+
+    // Modal
+    function showModal() {
+      document.getElementById("achievementsModal").style.display = "block";
+    }
+
+    function hideModal() {
+      document.getElementById("achievementsModal").style.display = "none";
+    }
+    
+  </script>
+  <script>
+    window.onload = function () {
+      const latest = localStorage.getItem("latestTestimonial");
+      if (latest) {
+        const { name, batch, message } = JSON.parse(latest);
+        const container = document.getElementById("latest-testimonial");
+        container.innerHTML = `
+          <h3>Recent Alumni Testimonial</h3>
+          <p><strong>${name}</strong> (Batch of ${batch}) says:</p>
+          <blockquote style="font-style: italic;">"${message}"</blockquote>
+        `;
+      }
+    };
+  </script>
+<!-- College Introduction Video -->
+<section class="video-section" style="text-align: center; margin-top: 2rem;">
+  <h2>Watch Our College Journey</h2>
+  <video controls 
+         style="width: 100%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);">
+    <source src="images/website.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+<footer>
+  <p>&copy; 2025 PSGR Krishnammal College for Women | All rights reserved.</p>
+</footer>
+  
+</body>
+</html>

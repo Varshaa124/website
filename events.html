@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events | PSGR Krishnammal Alumni Portal</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    body {
+      background: linear-gradient(to right, #7b2ff7, #f107a3);
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .events-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .event {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .event h3 {
+      margin-top: 0;
+      color: #ffe;
+    }
+
+    .event p {
+      margin: 0.5rem 0;
+    }
+
+    .event button {
+      background-color: #fff;
+      color: #7b2ff7;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .event button:hover {
+      background-color: #f1f1f1;
+    }
+
+    .centered-img {
+      display: block;
+      margin: 1rem auto 0 auto;
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      color: #000;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+    }
+
+    .modal-content input,
+    .modal-content select {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .modal-content button {
+      background-color: #7b2ff7;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .close-btn {
+      float: right;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PSGR Krishnammal College for Women</h1>
+    <p class="subtitle">Alumni Portal - Events</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contacts.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="events-section">
+      <h2>Upcoming Events</h2>
+
+      <!-- Event 1 -->
+      <div class="event">
+        <h3>Alumni Meet 2025</h3>
+        <p><strong>Date:</strong> August 25, 2025</p>
+        <p><strong>Venue:</strong> PSGR Auditorium</p>
+        <p>Reconnect with old friends, meet faculty, and enjoy a day of memories.</p>
+        <button onclick="openForm('Alumni Meet 2025')">Register</button>
+        <img src="images/alumin meet.jpg" alt="Alumni Meet Flyer" class="centered-img"/>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event">
+        <h3>Career Guidance Seminar</h3>
+        <p><strong>Date:</strong> September 10, 2025</p>
+        <p><strong>Venue:</strong> Online (Zoom)</p>
+        <p>Attend sessions from successful alumni in various career domains.</p>
+        <button onclick="openForm('Career Guidance Seminar')">Register</button>
+        <img src="images/career guidance.jpg" alt="Career Seminar Flyer" class="centered-img"/>
+      </div>
+
+      <h1><center>Past Events</center></h1><br><br>
+
+      <div class="event">
+        <h3>Alumni Sports Meet 2024</h3>
+        <p><strong>Date:</strong> December 5, 2024</p>
+        <p><strong>Venue:</strong> College Grounds</p>
+        <p>A day filled with games, fun, and alumni interaction.</p>
+        <img src="images/sports meet.jpg" alt="Sports Meet Flyer" class="centered-img"/>
+      </div>
+
+      <div class="event">
+        <h3>Entrepreneurship Talk 2023</h3>
+        <p><strong>Date:</strong> November 12, 2023</p>
+        <p><strong>Venue:</strong> Seminar Hall</p>
+        <p>Inspiring talks by alumni entrepreneurs and networking sessions.</p>
+        <img src="images/enterpreneur.png" alt="Entrepreneurship Talk Flyer" class="centered-img"/>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Registration Form -->
+  <div id="registrationModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeForm()">&times;</span>
+      <h3>Register for Event</h3>
+      <form onsubmit="submitRegistration(event)">
+        <input type="text" id="regName" placeholder="Your Name" required />
+        <input type="email" id="regEmail" placeholder="Your Email" required />
+        <select id="regBatch" required>
+          <option value="">Select Batch</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+        </select>
+        <input type="text" id="regEvent" readonly />
+        <button type="submit">Submit Registration</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 PSGR Krishnammal College for Women | All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openForm(eventName) {
+      document.getElementById("registrationModal").style.display = "block";
+      document.getElementById("regEvent").value = eventName;
+    }
+
+    function closeForm() {
+      document.getElementById("registrationModal").style.display = "none";
+    }
+
+    function submitRegistration(e) {
+      e.preventDefault();
+      alert("Registration submitted successfully!");
+      closeForm();
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("registrationModal");
+      if (event.target == modal) {
+        closeForm();
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | PSGR Krishnammal Alumni Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      background: linear-gradient(to right, #7b2ff7, #f107a3);
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      color: #ffe;
+    }
+
+    .contact-info, .college-info {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+
+    .contact-form {
+      margin-top: 2rem;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      margin-top: 0.3rem;
+    }
+
+    .contact-form button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #fff;
+      color: #7b2ff7;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PSGR Krishnammal College for Women</h1>
+    <p class="subtitle">Alumni Portal - Contact Us</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contacts.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+
+      <div class="contact-info">
+        <p><strong>Address:</strong> PSGR Krishnammal College for Women, Avinashi Road, Peelamedu, Coimbatore – 641004, Tamil Nadu, India</p>
+        <p><strong>Email:</strong> info@psgrkcw.ac.in</p>
+        <p><strong>Phone:</strong> +91 422 4295959</p>
+        <p><strong>Website:</strong> <a href="https://www.psgrkcw.ac.in" target="_blank" style="color: #fff; text-decoration: underline;">www.psgrkcw.ac.in</a></p>
+      </div>
+<br><br>
+      <div class="college-info">
+        <h3>About PSGR Krishnammal College for Women</h3>
+        <p>Established in 1963, PSGR Krishnammal College for Women is an autonomous institution dedicated to the empowerment of women through value-based education. The college offers a wide range of undergraduate, postgraduate, and research programs across arts, science, commerce, and management.</p>
+        <p>Accredited with an A++ Grade by NAAC and ranked among the top women’s colleges in India by NIRF, PSGRKCW fosters academic excellence, leadership, and innovation among its students. The institution is committed to preparing women to contribute effectively to the global workforce and community development.</p>
+      </div>
+
+      
+
+        <br>
+<h2>Alumni Testimonial</h2>
+<form class="contact-form" onsubmit="submitTestimonial(event)">
+  <label for="alumniName">Your Name:</label>
+  <input type="text" id="alumniName" required />
+
+  <label for="alumniBatch">Batch:</label>
+  <input type="text" id="alumniBatch" required />
+
+  <label for="alumniMessage">One line about the change made by college in your career:</label>
+  <textarea id="alumniMessage" rows="2" required></textarea>
+
+  <button type="submit">Submit Testimonial</button>
+</form>
+
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 PSGR Krishnammal College for Women | All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitContactForm(event) {
+      event.preventDefault();
+      alert("Thank you for your message! We'll get back to you soon.");
+      event.target.reset();
+    }
+  </script>
+  
+  <script>
+    function submitTestimonial(event) {
+      event.preventDefault();
+  
+      const name = document.getElementById("alumniName").value.trim();
+      const batch = document.getElementById("alumniBatch").value.trim();
+      const message = document.getElementById("alumniMessage").value.trim();
+  
+      if (name && batch && message) {
+        const testimonial = { name, batch, message };
+        localStorage.setItem("latestTestimonial", JSON.stringify(testimonial));
+        alert("Thank you! Your testimonial will be displayed on the About page.");
+        event.target.reset();
+      }
+    }
+  </script>
+  
+</body>
+</html>

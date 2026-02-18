@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | PSGR Krishnammal Alumni Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>PSGR Krishnammal College for Women</h1>
+    <p class="subtitle">Alumni Portal - Register</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contacts.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="register-section">
+      <h2>Create Alumni Account</h2>
+      <form id="registerForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required />
+
+        <label for="batch">Batch / Year of Graduation:</label>
+        <select id="batch" required>
+          <option value="">Select Year</option>
+          <!-- You can update years as needed -->
+          <option>2025</option>
+          <option>2024</option>
+          <option>2023</option>
+          <option>2022</option>
+          <option>2021</option>
+          <option>2020</option>
+          <option>2019</option>
+        </select>
+
+        <label for="role">Your Role:</label>
+        <select id="role" required>
+          <option value="">Select Role</option>
+          <option>Student</option>
+          <option>Alumna</option>
+          <option>Faculty</option>
+        </select>
+
+        <label for="profilePic">Upload Profile Picture:</label>
+        <input type="file" id="profilePic" accept="image/*" />
+
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" required />
+
+        <label for="confirmPass">Confirm Password:</label>
+        <input type="password" id="confirmPass" required />
+
+        <button type="submit">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 PSGR Krishnammal College for Women | All rights reserved.</p>
+  </footer>
+
+  <script src="js/register.js"></script>
+</body>
+</html>
